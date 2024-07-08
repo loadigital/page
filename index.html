@@ -27,7 +27,7 @@
     <div class="main col-12 flexrow-c">
         <div class="main-0 col-8 flexrow-c">
             <div class="main-1 flexrow-c col-12">
-                <div class="col-12 flexrow-c" ><button class="bot-2" id="times"></button></div>
+                
             </div>
             
             <div class="main-1 flexrow-c col-12">
@@ -45,12 +45,12 @@
 
             <div class="main-1 flexrow-c col-12">
                 <h1>Ver Video</h1>
-                <p class="col-12" id="text--"><i class="bi-arrow-repeat"></i> </p>
+                <p class="col-12 bi-arrow-repeat" id="text--"> </p>
             </div>
             <div class="main-1 flexrow-c col-12">
-                <div class="img- col-12 flexrow-c ca-2" style="display:none;transition: all 1s;"><i class="bi-play-btn" id="btn-0"></i></div>
-                <div class="img- col-12 flexrow-c ca-1"><i class="bi-play-btn" id="btn-" ></i></div>
-                
+                <div class="img- col-12 flexrow-c ca-2" style="display: none;"></div>
+                <div class="img- col-12 flexrow-c ca-1"><button class="bot-2" id="times"></button></div>
+                <div class="col-12 flexrow-c" ></div>
             </div>
 
             <div class="main-1 flexrow-c col-12">
@@ -110,7 +110,6 @@
     </div>
     
 <script>
-
 var control = 30;
 
 function times() {
@@ -118,7 +117,7 @@ function times() {
 	document.getElementById("times").innerHTML = "Por favor espera  " +  control + " Segundos y luego preciona el botón del video para ver el contenido";
 
 	if(control == 0) {
-       		document.querySelector(".ca-2").style.display="flex";
+        document.querySelector(".ca-2").style.display="flex";
 		document.querySelector(".ca-1").style.display="none";
         
 	}else{
@@ -133,10 +132,6 @@ times()
 let params = new URL(document.location).searchParams;
 let e = params.get('e');
 
-
-document.getElementById("btn-").addEventListener("click", ()=>{
-    window.open('https://wombjingle.com/ynuxp8u2?key=84dd6117f93adeabeb2944ba2ab810ae' ,  target="_blank");
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();
@@ -155,12 +150,16 @@ const fetchData = async () => {
 const list = data => {
  data.forEach(element => {
     
-    if(e === element.id)
-    document.getElementById("text--").innerHTML += element.title;
-    document.querySelector(".ca-2").innerHTML = `<a href="${element.link}"><i class="bi-play-btn" id="btn-0"></i></a>` 
-
- });
+    console.log(element.link)
+    if(e === element.id){
+        document.getElementById("text--").innerHTML = " " + element.title;
+        document.querySelector(".ca-2").innerHTML = `<a href="${element.link}"><i class="bi-play-btn" id="btn-0"></i></a>` 
+    }
+     
+})
 }
+
+
 </script>
 <script type='text/javascript' src='//wombjingle.com/14/33/cb/1433cb28e47378cdf28475d8c1966dc9.js'></script>
 </body>
