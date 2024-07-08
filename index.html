@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page-xxx</title>
+    <link rel="stylesheet" type="text/css" href="https://loadigital.github.io/movies.biloa/icon/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://loadigital.github.io/api/css/libreria-1-0-1.css">
+    <style>
+         body{background: #000000;}
+        .main-1{border:0px solid #000;}
+        .bot-2{background: #e0b803;font-family: Arial}
+        .img-{border:1px solid #e0b803; border-radius: 7px 7px; height: 450px;background: linear-gradient(rgba(0, 0, 0, 0.8) 100%,rgb(0, 0, 0) 0%),url(img/img-xxx.jpg);background-repeat: no-repeat;
+            background-size: 100%;height: 450p;}
+        .img- .bi-play-btn{font-size: 100px;color: #e0b803;}
+        .img- .bi-play-btn:hover{font-size: 100px;color: #ffffff;cursor: pointer;}
+        .main-1 h1, .main-1 p{color:#fff;}
+        .bi-arrow-repeat{color: #e0b803;}
+        @media screen and (max-width:800px ) {
+            .img-{height: 200px; background-size: 100%;}
+            .img- .bi-play-btn{font-size: 50px;}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main col-12 flexrow-c">
+        <div class="main-0 col-8 flexrow-c">
+            <div class="main-1 flexrow-c col-12">
+                <div class="col-12 flexrow-c" ><button class="bot-2" id="times"></button></div>
+            </div>
+            
+            <div class="main-1 flexrow-c col-12">
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '1a7851505a19ee4963000114a48f9203',
+                        'format' : 'iframe',
+                        'height' : 90,
+                        'width' : 728,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//wombjingle.com/1a7851505a19ee4963000114a48f9203/invoke.js"></script>
+            </div>
+
+            <div class="main-1 flexrow-c col-12">
+                <h1>Ver Video</h1>
+                <p class="col-12" id="text--"><i class="bi-arrow-repeat"></i> </p>
+            </div>
+            <div class="main-1 flexrow-c col-12">
+                <div class="img- col-12 flexrow-c ca-2" style="display:none;transition: all 1s;"><i class="bi-play-btn" id="btn-0"></i></div>
+                <div class="img- col-12 flexrow-c ca-1"><i class="bi-play-btn" id="btn-" ></i></div>
+                
+            </div>
+
+            <div class="main-1 flexrow-c col-12">
+                <script async="async" data-cfasync="false" src="//wombjingle.com/592a6a0c0e5002900a013335dd2f24ad/invoke.js"></script>
+                <div id="container-592a6a0c0e5002900a013335dd2f24ad"></div>
+            </div>
+            
+
+            <div class="main-1 flexrow-c col-12">
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '59078614d9c977aa3da0b4c5b3244691',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//wombjingle.com/59078614d9c977aa3da0b4c5b3244691/invoke.js"></script>
+                
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '59078614d9c977aa3da0b4c5b3244691',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//wombjingle.com/59078614d9c977aa3da0b4c5b3244691/invoke.js"></script>
+
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '59078614d9c977aa3da0b4c5b3244691',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//wombjingle.com/59078614d9c977aa3da0b4c5b3244691/invoke.js"></script>
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '59078614d9c977aa3da0b4c5b3244691',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//wombjingle.com/59078614d9c977aa3da0b4c5b3244691/invoke.js"></script>
+                
+            </div>
+           
+
+        </div>
+    </div>
+    
+<script>
+
+var control = 20;
+
+function times() {
+
+	document.getElementById("times").innerHTML = "Por favor espera  " +  control + " Segundos para ver el contenido";
+
+	if(control == 0) {
+        document.querySelector(".ca-2").style.display="flex";
+		document.querySelector(".ca-1").style.display="none";
+	}else{
+		control--;
+		setTimeout("times()",1000);
+	}
+}
+
+times()
+
+let params = new URL(document.location).searchParams;
+let e = params.get('e');
+
+
+document.getElementById("btn-").addEventListener("click", ()=>{
+    window.open('https://wombjingle.com/ynuxp8u2?key=84dd6117f93adeabeb2944ba2ab810ae' ,  target="_blank");
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchData();
+});
+
+const fetchData = async () => {
+    try{
+        const res = await fetch('db.json');
+        const data = await res.json();
+        list(data);
+    }catch (error) {
+        console.log(error);
+    }
+}
+
+const list = data => {
+ data.forEach(element => {
+    document.getElementById("text--").innerHTML += element.title;
+    if(e === element.id)
+    document.getElementById("btn-0").addEventListener("click", ()=>{
+    window.open(element.link,  target="_blank");
+    });
+ });
+}
+
+</script>
+<script type='text/javascript' src='//wombjingle.com/14/33/cb/1433cb28e47378cdf28475d8c1966dc9.js'></script>
+</body>
+</html>
