@@ -152,8 +152,9 @@ const fetchData = async () => {
 
 const list = data => {
  data.forEach(element => {
-    document.getElementById("text--").innerHTML += element.title;
+    
     if(e === element.id)
+    document.getElementById("text--").innerHTML += element.title;
     document.getElementById("btn-0").addEventListener("click", ()=>{
     window.open(element.link,  target="_blank");
     });
