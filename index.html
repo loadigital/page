@@ -111,7 +111,7 @@
     
 <script>
 
-var control = 30;
+var control = 5;
 
 function times() {
 
@@ -120,6 +120,7 @@ function times() {
 	if(control == 0) {
         document.querySelector(".ca-2").style.display="flex";
 		document.querySelector(".ca-1").style.display="none";
+        
 	}else{
 		control--;
 		setTimeout("times()",1000);
@@ -127,6 +128,7 @@ function times() {
 }
 
 times()
+
 
 let params = new URL(document.location).searchParams;
 let e = params.get('e');
@@ -155,12 +157,10 @@ const list = data => {
     
     if(e === element.id)
     document.getElementById("text--").innerHTML += element.title;
-    document.getElementById("btn-0").addEventListener("click", ()=>{
-    window.open(element.link,  target="_blank");
-    });
+    document.querySelector(".ca-2").innerHTML = `<a href="${element.link}"><i class="bi-play-btn" id="btn-0"></i></a>` 
+
  });
 }
-
 </script>
 <script type='text/javascript' src='//wombjingle.com/14/33/cb/1433cb28e47378cdf28475d8c1966dc9.js'></script>
 </body>
