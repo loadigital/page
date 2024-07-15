@@ -10,14 +10,13 @@
          body{background: #000000;}
         .main-1{border:0px solid #000;}
         .bot-2{background: #e0b803;font-family: Arial}
-        .img-{border:1px solid #e0b803; border-radius: 7px 7px; height: 450px;background: linear-gradient(rgba(0, 0, 0, 0.8) 100%,rgb(0, 0, 0) 0%),url(img/img-xxx.jpg);background-repeat: no-repeat;
-            background-size: 100%;height: 450p;}
+        .img- iframe{width: 100%; height: 460px;padding: 0px;border-radius: 10px;border: solid 1px rgb(220, 118, 18) ;}
         .img- .bi-play-btn{font-size: 100px;color: #e0b803;}
         .img- .bi-play-btn:hover{font-size: 100px;color: #ffffff;cursor: pointer;}
         .main-1 h1, .main-1 p{color:#fff;}
         .bi-arrow-repeat{color: #e0b803;}
         @media screen and (max-width:800px ) {
-            .img-{height: 200px; background-size: 100%;}
+            .img- iframe{width: 100%;height: 200px;padding: 0px;}
             .img- .bi-play-btn{font-size: 50px;}
         }
     </style>
@@ -154,7 +153,7 @@ const list = data => {
     console.log(element.link)
     if(e === element.id){
         document.getElementById("text--").innerHTML = " " + element.title;
-        document.querySelector(".ca-2").innerHTML = `<a href="${element.link}"><i class="bi-play-btn" id="btn-0"></i></a>` 
+        document.querySelector(".ca-2").innerHTML = ` <iframe id="ver" src="${element.link}" frameborder=0 marginwidth=0 marginheight=0 scrolling=no width=720 height=460 allowfullscreen allow="autoplay" ></iframe>` 
     }
      
 })
