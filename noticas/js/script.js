@@ -29,6 +29,7 @@ const list = data => {
      `
 
      document.querySelector(".container-seccion-2").innerHTML = `
+             <div class="flexrow-c col-12"><h2>Mira uno de sus Videos</h2></div>
             <div class=" container-iframe flexrow-c col-10"><iframe src="${element.video}" frameborder=0 marginwidth=0 marginheight=0 scrolling=no width=720 height=460 allowfullscreen allow="autoplay" ></iframe></div>
             <div class="flexrow-c col-10"><p  class="text-p">${element.text_seccion2}</p></div>
      `
