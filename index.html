@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page-xxx</title>
+    <title>XPXX</title>
     <link rel="stylesheet" type="text/css" href="https://loadigital.github.io/movies.biloa/icon/bootstrap-icons.css">
     <link rel="stylesheet" href="https://loadigital.github.io/api/css/libreria-1-0-1.css">
     <style>
@@ -19,6 +19,50 @@
             .img- iframe{width: 100%;height: 200px;padding: 0px;}
             .img- .bi-play-btn{font-size: 50px;}
         }
+        .cpa{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: background: rgb(12, 17, 31, 0.0);;
+    z-index: 1000;
+    border: solid #dc7612 0px;
+    top:0px;
+    left:0px; 
+    bottom:0px; 
+    right:0px;
+    }
+    .card-img iframe {
+    width: 100%;
+    height: 200px;
+    padding: 0px;
+    border-radius: 10px;
+    border: solid 1px rgb(220, 118, 18) ;
+    }   
+
+    .grid-1{
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 0px;
+    padding: 0px;
+    border-radius:7px 7px;
+    }      
+    .title-card{
+    font-size: 10px;
+    color: #fff;
+    }
+    @media screen and (max-width:800px ) {
+    
+    .grid-1{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .title-card{
+    font-size: 10px;
+  
+    }
+    .card-img iframe {
+    width: 100%;height: 200px;padding: 0px;
+    
+    }
+    }
     </style>
 </head>
 <body>
@@ -64,6 +108,12 @@
                 <script type="text/javascript" src="//wombjingle.com/59078614d9c977aa3da0b4c5b3244691/invoke.js"></script>
                 
             </div>
+
+            
+            <div class="flexrow-c col-12" >
+                <h1 style="color: #fff;text-align: center;">Quizás te podría interesar</h1>
+                <div class="col-12 grid-1 flexrow-c"  id="card-similares" ></div>
+            </div>
             <div class="main-1 flexrow-c col-12">
                 <script async="async" data-cfasync="false" src="//wombjingle.com/592a6a0c0e5002900a013335dd2f24ad/invoke.js"></script>
                 <div id="container-592a6a0c0e5002900a013335dd2f24ad"></div>
@@ -74,25 +124,7 @@
     </div>
     
 <script>
-/*
-var control = 30;
 
-function times() {
-
-	document.getElementById("times").innerHTML = "Por favor espera  " +  control + " Segundos y luego preciona el botón del video para ver el contenido";
-
-	if(control == 0) {
-        document.querySelector(".ca-2").style.display="flex";
-		document.querySelector(".ca-1").style.display="none";
-        
-	}else{
-		control--;
-		setTimeout("times()",1000);
-	}
-}
-
-times()
-*/
 
 let params = new URL(document.location).searchParams;
 let e = params.get('e');
@@ -122,6 +154,36 @@ const list = data => {
     }
      
 })
+
+function pintar(data){
+    return [...data].sort(() => (Math.random() > 0.5 ? 1 : -1)).slice(0, 4)
+}
+ 
+pintar(data).forEach(item =>{
+    const cardSimilares = document.querySelector("#card-similares")
+    const card = document.createElement("div");
+            
+            card.innerHTML += `
+           
+            <div class="card">
+                <div class="card-img">
+                <a href="${"https://urlu.online/?e=" + item.id}">
+                    <div class="cpa"></div>
+                </a>
+                    <iframe id="ver" src="${item.link}" frameborder=0 marginwidth=0 marginheight=0 scrolling=no width=720 height=460 allowfullscreen allow="autoplay" ></iframe>
+                </div>
+                <div class="card-body">
+    
+               <div class="title-card"><p class="colore">${item.title}</p></div>
+                </div>
+            </div> 
+            
+            `
+            cardSimilares.appendChild(card)
+
+           
+})
+
 }
 
 
