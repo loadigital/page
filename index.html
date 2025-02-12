@@ -186,12 +186,12 @@ const list = data => {
     }
      
 })
-/*
+
 function pintar(data){
     return [...data].sort(() => (Math.random() > 0.5 ? 1 : -1)).slice(0, 4)
 }
-*/ 
-data.forEach(item =>{
+
+pintar(data).forEach(item =>{
     const cardSimilares = document.querySelector("#card-similares")
     const card = document.createElement("div");
             
