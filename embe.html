@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+
+</head>
+<body>
+  <link rel="stylesheet" href="https://loadigital.github.io/api/css/b!loa.css">
+  <link rel="stylesheet" type="text/css" href="https://loadigital.github.io/movies.biloa/icon/bootstrap-icons.css">
+ <style>
+* {
+	padding:0;
+    margin:0;
+    border: 0;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+	box-sizing: border-box;
+ }
+body{
+    font-family: "Roboto", sans-serif;
+  }
+html, body{
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.nonen{display:none;}
+.content-main-embe{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+ .main-anuncios{
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: rgba(218, 0, 120, 0.9);
+  padding: 10px;
+  z-index: 201;
+}
+
+.content-banner-anuncio{
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  background: #fff;
+  padding: 7px 7px;
+  border-radius: 5px 5px;
+  
+}
+.content-banner{
+  width: 100%;
+  height:100%;
+  display: block;
+  justify-content: center;
+ 
+  
+}
+.anuncio-content .co-time{
+    width: 100%;
+     text-align: center;
+    color: black;
+   font-size: 20px;
+   font-family: Arial;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+.content-banner .co-texto{
+     width: 100%;
+    color: black;
+    padding: 0px;
+    text-align: center;
+     font-family: Arial;
+     margin-bottom: 0px;
+     font-size: 20px;
+}
+
+.anuncio-content{
+    width: 100%;
+    height: 100%;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: start;
+     
+   
+}
+.anuncio-content iframe{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+     margin-top: 20px;
+     box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 768px) {
+    .content-banner-anuncio{
+        width: 90%;
+        height:auto;
+    }
+   .anuncio-content iframe{
+  
+     margin-top: 2px;
+    
+}
+}      
+.bo-a-m{  
+position:relative;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+
+}
+
+.bo-a-m .bi-lock-fill{
+    font-size: 30px;
+    color: black;
+    padding: 7px;
+}
+.bo-a-m .button-2, .bo-a-m-a .button-2{
+  background: #184bf3;
+ 
+}
+</style>
+
+    <div class="content-main-embe">
+
+        <iframe id="iframe" src="#" allowfullscreen scrolling="no"  style=" left:0px; bottom:0px; right:0px; width:100%; height:450px; border:none; margin:0; padding:0; overflow:hidden; "> Your browser doesn't support iframes </iframe> 
+   
+    </div>
+
+    <!--modal2-->
+
+<div class="main-anuncios " id="x-main">
+    
+    <div class="content-banner-anuncio">
+       
+        
+            
+        <div class="content-banner ">
+          
+            <div class="anuncio-content">
+               
+               <h5 class="co-texto">Desbloquear para seguir viendo el vídeo</h5>
+               <a target="_blank" class="bo-a-m w-12 abr-2 a" href="https://disguisedtimingbreath.com/mkpvt5nse?key=e182a0c024588f99515c23a9d9c689ff"> <button class="bi-lock-fill button-2"> Desbloquear</button></a>
+ 
+            </div>
+           
+        </div>
+        </div>
+        
+
+    
+    </div>
+
+<script>
+   let url_embe = new URL(document.location).searchParams;
+   let id = url_embe.get('id');
+  
+
+
+  const datos = {
+     method :'POST'
+    };
+    
+    fetch('https://biloa.site/zonax2/json.php',datos)
+    .then(respuesta => respuesta.json())
+    .then(resultado =>{
+   
+   
+        resultado.forEach(element =>{
+           const iframe = document.querySelector("#iframe");
+           
+            if(element.id == id){
+               
+                iframe.src = element.link_video;
+            
+            }
+        });
+
+    })
+
+var control = 30;
+
+function times() {
+
+	if(control == 0) {
+    
+   document.getElementById("x-main").style.display="flex";
+	}else{
+		control--;
+	 setTimeout("times()",1000);
+	}
+}
+times()
+
+document.querySelector(".abr-2").addEventListener("click", ()=>{
+  document.getElementById("x-main").style.display="none";
+  control = 60;
+  times()
+  })
+
+  function loadEven() {
+    control = 60;
+   times()
+  }
+  loadEven()
+</script>
+
+</body>
+</html>
